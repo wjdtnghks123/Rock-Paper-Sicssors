@@ -39,10 +39,10 @@ class Form(QDialog):
         example_index = random.randrange(0,3)
         self.result = example[example_index]
         self.computer_edit.setText(self.result)
-        self.who_winloss()
+        self.who_winlose()
     
     # 사용자 입력, 컴퓨터 입력 비교 후 결과 도출
-    def who_winloss(self) :
+    def who_winlose(self) :
         user_form = ["가위 " , "바위 ", "보 "]
         
         # 양식과 다른 입력이 들어온 경우 
