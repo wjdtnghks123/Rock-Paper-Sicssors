@@ -7,11 +7,12 @@ from PySide6.QtGui import QColor
 
 
 class Form(QDialog):                
-                       
+
     def __init__(self, parent=None):          
         # layout 구성요소          
         super(Form, self).__init__(parent)
-        self.user_edit = QLineEdit("당신의 선택, form : 마지막 띄어쓰기 한 칸 , ex : '가위 ' ")
+        self.user_edit = QLineEdit()
+        self.user_edit.setPlaceholderText(" form: '가위  ' 한 칸 띄어쓰기 필수!! ")
         self.computer_edit = QLineEdit("상대의 선택")
         self.winlose_edit = QLineEdit("승패 결과")
         self.excute_button = QPushButton("실행하기") 
