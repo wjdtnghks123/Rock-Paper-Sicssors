@@ -17,7 +17,8 @@ class Form(QDialog):
         self.winlose_edit = QLineEdit("승패 결과")
         self.excute_button = QPushButton("실행하기") 
         self.image = QTextEdit(' 결과 출력창 ')
-
+        # example_list index별 관계 0 < 1 < 2 < 0
+        self.example_list = ["가위 ", "바위 ", "보 "]
         # window 크기 조절
         self.resize(530,400)
         
@@ -35,9 +36,8 @@ class Form(QDialog):
         
     # 컴퓨터 선택 랜덤 추출 
     def excute(self) : 
-        example = ["가위 " , "바위 " , "보 "]
         example_index = random.randrange(0,3)
-        self.result = example[example_index]
+        self.result = self.example_list[example_index]
         self.computer_edit.setText(self.result)
         self.who_winlose()
     
@@ -61,22 +61,22 @@ class Form(QDialog):
         
         # 그외 승부가 나는 경우
         else : 
-            if str(self.user_edit.text()) == "가위 " : 
-                if self.result == "바위 " : 
+            if str(self.user_edit.text()) == self.example_list[0] : 
+                if self.result == self.example_list[1] : 
                     self.result_index = 1
                     self.winlose_edit.setText("패배")
                 else : 
                     self.result_index = 0
                     self.winlose_edit.setText("승리")
-            elif str(self.user_edit.text()) == "바위 " : 
-                if self.result == "보 " : 
+            elif str(self.user_edit.text()) == self.example_list[1] : 
+                if self.result == self.example_list[2] : 
                     self.result_index = 1
                     self.winlose_edit.setText("패배")
                 else : 
                     self.result_index = 0
                     self.winlose_edit.setText("승리")      
             else : 
-                if self.result == "가위 " : 
+                if self.result == self.example_list[0] : 
                     self.result_index = 1
                     self.winlose_edit.setText("패배")
                 else : 
