@@ -1,8 +1,10 @@
 import sys
-from PySide6.QtWidgets import (QLineEdit, QPushButton, QApplication,
-    QVBoxLayout, QDialog, QTextEdit )  
-from PySide6.QtGui import QColor
 import random
+from PySide6.QtWidgets import QLineEdit, QPushButton
+from PySide6.QtWidgets import QApplication, QVBoxLayout
+from PySide6.QtWidgets import QDialog, QTextEdit 
+from PySide6.QtGui import QColor
+
 
 class Form(QDialog):                                   
     def __init__(self, parent=None):          
