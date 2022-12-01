@@ -20,7 +20,7 @@ class Form(QDialog):
         # example_list index별 관계 0 < 1 < 2 < 0
         self.example_list = ["가위 ", "바위 ", "보 "]
         # window 크기 조절
-        self.resize(530,400)
+        self.resize(530, 400)
         
         # layout에 추가 
         layout = QVBoxLayout()
@@ -35,18 +35,18 @@ class Form(QDialog):
         self.excute_button.clicked.connect(self.excute) 
         
     # 컴퓨터 선택 랜덤 추출 
-    def excute(self) : 
-        example_index = random.randrange(0,3)
+    def excute(self): 
+        example_index = random.randrange(0, 3)
         self.result = self.example_list[example_index]
         self.computer_edit.setText(self.result)
         self.who_winlose()
     
     # 사용자 입력, 컴퓨터 입력 비교 후 결과 도출
-    def who_winlose(self) :
+    def who_winlose(self):
         user_form = ["가위 " , "바위 ", "보 "]
         
         # 양식과 다른 입력이 들어온 경우 
-        if str(self.user_edit.text()) not in user_form : 
+        if str(self.user_edit.text()) not in user_form: 
             self.result_index = -1 
             self.user_edit.setText("양식에 맞춰 다시 입력하세요. ex) '가위 ' ")
             self.computer_edit.setText("----")
@@ -55,28 +55,28 @@ class Form(QDialog):
             return 
         
         # 무승부인 경우 
-        if str(self.user_edit.text()) == str(self.computer_edit.text())  : 
+        if str(self.user_edit.text()) == str(self.computer_edit.text()): 
             self.result_index = 2
             self.winlose_edit.setText("무승부")
         
         # 그외 승부가 나는 경우
         else : 
-            if str(self.user_edit.text()) == self.example_list[0] : 
-                if self.result == self.example_list[1] : 
+            if str(self.user_edit.text()) == self.example_list[0]: 
+                if self.result == self.example_list[1]: 
                     self.result_index = 1
                     self.winlose_edit.setText("패배")
                 else : 
                     self.result_index = 0
                     self.winlose_edit.setText("승리")
-            elif str(self.user_edit.text()) == self.example_list[1] : 
-                if self.result == self.example_list[2] : 
+            elif str(self.user_edit.text()) == self.example_list[1]: 
+                if self.result == self.example_list[2]: 
                     self.result_index = 1
                     self.winlose_edit.setText("패배")
                 else : 
                     self.result_index = 0
                     self.winlose_edit.setText("승리")      
             else : 
-                if self.result == self.example_list[0] : 
+                if self.result == self.example_list[0]: 
                     self.result_index = 1
                     self.winlose_edit.setText("패배")
                 else : 
@@ -86,20 +86,20 @@ class Form(QDialog):
         return 
     
     # 맨 아래 결과 창에 결과 출력 
-    def print_image(self) : 
+    def print_image(self): 
         # 결과 경우의 수 
         result_text = ["  win " , " Lose" , " Draw"]
         self.image.setFontItalic(True)
         self.image.setFontPointSize(180)
         if self.result_index == 0 : 
-            self.image.setTextColor( QColor(0,0,255))
+            self.image.setTextColor( QColor(0, 0, 255))
         elif self.result_index == 1 : 
-            self.image.setTextColor( QColor(255,0,0))
+            self.image.setTextColor( QColor(255, 0, 0))
         elif self.result_index == 2 : 
-            self.image.setTextColor( QColor(0,255,0))
+            self.image.setTextColor( QColor(0, 255, 0))
         else : 
             # 입력 form이 맞지 않는 경우 
-            self.image.setTextColor( QColor(255,255,255))
+            self.image.setTextColor( QColor(255, 255, 255))
             self.image.setFontPointSize(30)
             self.image.setText("please fill in the form ")
             return 
