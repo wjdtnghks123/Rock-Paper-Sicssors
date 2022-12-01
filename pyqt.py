@@ -6,9 +6,9 @@ from PySide6.QtWidgets import QDialog, QTextEdit
 from PySide6.QtGui import QColor
 
 
-class Form(QDialog):                                   
+class Form(QDialog):                
+                       
     def __init__(self, parent=None):          
-        
         # layout 구성요소          
         super(Form, self).__init__(parent)
         self.user_edit = QLineEdit("당신의 선택, form : 마지막 띄어쓰기 한 칸 , ex : '가위 ' ")
@@ -16,7 +16,7 @@ class Form(QDialog):
         self.winlose_edit = QLineEdit("승패 결과")
         self.excute_button = QPushButton("실행하기") 
         self.image = QTextEdit(' 결과 출력창 ')
-        
+
         # window 크기 조절
         self.resize(530,400)
         
