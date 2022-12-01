@@ -92,14 +92,14 @@ class Form(QDialog):
         self.image.setFontItalic(True)
         self.image.setFontPointSize(180)
         if self.result_index == 0 : 
-            self.image.setTextColor( QColor(0, 0, 255))
+            self.image.setTextColor(QColor(0, 0, 255))
         elif self.result_index == 1 : 
-            self.image.setTextColor( QColor(255, 0, 0))
+            self.image.setTextColor(QColor(255, 0, 0))
         elif self.result_index == 2 : 
-            self.image.setTextColor( QColor(0, 255, 0))
+            self.image.setTextColor(QColor(0, 255, 0))
         else : 
             # 입력 form이 맞지 않는 경우 
-            self.image.setTextColor( QColor(255, 255, 255))
+            self.image.setTextColor(QColor(255, 255, 255))
             self.image.setFontPointSize(30)
             self.image.setText("please fill in the form ")
             return 
